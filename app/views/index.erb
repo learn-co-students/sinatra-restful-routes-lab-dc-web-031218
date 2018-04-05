@@ -1,0 +1,15 @@
+<h1>Recipe Book</h1>
+<% if @recipes.empty? || @recipes == nil %>
+<p>You have no recipes! Create a new one! </p>
+
+<a href="/recipes/new">Create a new one!</a>
+<% else %>
+	<% @recipes.each do |recipe| %>
+		<p><%= recipe.name %></p>
+		 <p><%= recipe.ingredients %></p>
+		 <p><%= recipe.cook_time %></p>
+		 <p> <a href="/recipes/<%= recipe.id %>">Show</a></p>
+	<% end %>
+	<a href="/recipes/new">Create a new one!</a>
+<% end %>
+<!-- contains links to each recipes show page -->
