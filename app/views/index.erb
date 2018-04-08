@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recipes Index</title>
+</head>
+<body>
+	<h1>All Recipes</h1>
+	<% if @recipes %>
+		<% @recipes.each do |recipe| %>
+				<p> <%= recipe.name %> </p>
+				<p>Link: <a href= <%="/recipes/#{recipe.id}" %>> Link to Recipe</a> </p>
+			<% end %>
+		<% end %> 
+	</body>
+</html>
